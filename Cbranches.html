@@ -136,7 +136,7 @@
             height: 55vh;
             min-height: 350px;
             background-color: var(--text-main);
-            background-image: url('https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/Coffee_cup_on_wooden_table_202607031205-1.jpeg');
+            background-image: url('images/Coffee_cup_on_wooden_table_202607031205.jpeg');
             background-size: cover;
             background-position: center 100%;
             background-repeat: no-repeat;
@@ -247,7 +247,6 @@
             padding: 0.5rem;
             background-color: var(--white);
             box-shadow: 0 20px 40px rgba(44, 30, 22, 0.08);
-            aspect-ratio: 4 / 3;
             display: flex;
             position: relative;
             overflow: hidden;
@@ -272,14 +271,20 @@
         }
 
         /* --- ADDED: Missing Keyframes for the hover animation to work --- */
-        @keyframes shineLeftToRight { 
-            0% { left: -100%; } 
-            100% { left: 200%; } 
+        @keyframes shineLeftToRight {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 200%;
+            }
         }
 
         .branch-image img {
             width: 100%;
-            height: 100%;
+            height: auto;
+            display: block;
             object-fit: cover;
             border-radius: 8px;
             transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
@@ -439,7 +444,6 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            border-radius: 12px;
             display: block;
         }
 
@@ -562,7 +566,6 @@
             }
 
             .branch-image {
-                aspect-ratio: 16 / 9;
                 width: 100%;
             }
 
@@ -737,8 +740,7 @@
 
     <header class="head">
         <div class="brand">
-            <img src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/logo-removebg-preview.png"
-                alt="Coffee World Logo">
+            <img src="images/logo.png?v=2" alt="Coffee World Logo">
             My Coffee World
         </div>
         <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation">
@@ -760,8 +762,7 @@
     <section class="branches-section container">
 
         <div class="branch-card">
-            <div class="branch-image"><img
-                    src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/Coffee_pavilion_with_glass_windows_202607011103.jpeg"
+            <div class="branch-image"><img src="images/Coffee_pavilion_with_glass_windows_202607011103.jpeg"
                     alt="Interior of Cafe Bhawan"></div>
             <div class="branch-content">
                 <h2>Cafe Bhawan</h2>
@@ -785,8 +786,7 @@
         </div>
 
         <div class="branch-card">
-            <div class="branch-image"><img
-                    src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/Coffee_roastery_interior_with_ro…_202607011123.jpeg"
+            <div class="branch-image"><img src="images/Coffee_shop_interior_modern_design_202607011606.jpeg"
                     alt="Exterior of Lion Cafe"></div>
             <div class="branch-content">
                 <h2>Lion Cafe</h2>
@@ -809,8 +809,7 @@
         </div>
 
         <div class="branch-card">
-            <div class="branch-image"><img
-                    src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/Greenhouse_coffee_shop_interior_202607011131.jpeg"
+            <div class="branch-image"><img src="images/Greenhouse_coffee_shop_interior_202607011131.jpeg"
                     alt="Barista working at Green World Cafe"></div>
             <div class="branch-content">
                 <h2>Green World Cafe</h2>
@@ -833,8 +832,7 @@
         </div>
 
         <div class="branch-card">
-            <div class="branch-image"><img
-                    src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/Modern_loft_coffee_shop_interior_202607011134.jpeg"
+            <div class="branch-image"><img src="images/Modern_loft_coffee_shop_interior_202607011134.jpeg"
                     alt="Coffee shop near the water"></div>
             <div class="branch-content">
                 <h2>The Chocolate Room Cafe</h2>
@@ -857,7 +855,7 @@
 
         <div class="branch-card">
             <div class="branch-image"><img
-                    src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/Coffee_shop_atrium_smooth_archit…_202607011144.jpeg"
+                    src="C:\Users\Sivanesan S\OneDrive\Desktop\coffee project\images\Coffee_shop_atrium_smooth_archit…_202607011144.jpeg"
                     alt="Modern coffee shop with laptops and study spaces"></div>
             <div class="branch-content">
                 <h2>Cafe Dori</h2>
@@ -886,8 +884,7 @@
 
             <div class="ms-footer-brand">
                 <div class="brand">
-                    <img src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/logo-removebg-preview.png"
-                        alt="Coffee World Logo">
+                    <img src="images/logo.png?v=2" alt="Coffee World Logo">
                     My Coffee World
                 </div>
                 <h2 class="footer-heading">
@@ -951,7 +948,7 @@
             </div>
 
             <div class="ms-footer-center-image">
-                <img src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/c11.jpg" alt="My Coffee Cup">
+                <img src="C:\Users\Sivanesan S\OneDrive\Desktop\coffee project\images\c11.jpg" alt="My Coffee Cup">
             </div>
 
         </div>

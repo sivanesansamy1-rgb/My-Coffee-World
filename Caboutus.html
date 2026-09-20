@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - The Coffee World</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Oswald&family=DM+Sans:wght@500;600&family=Syne:wght@800&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Oswald&family=DM+Sans:wght@500;600&family=Syne:wght@800&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
-            --bg-color: #fdfbf5; 
-            --text-color: #2c1e16; 
+            --bg-color: #fdfbf5;
+            --text-color: #2c1e16;
             --text-light: #5a4634;
-            --accent-color: #c49a45; 
+            --accent-color: #c49a45;
             --card-bg: #ffffff;
             --dark-card: #1f140e;
         }
@@ -29,74 +32,475 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.7;
-            overflow-x: hidden; 
+            overflow-x: hidden;
         }
 
-        h1, h2, h3 { font-family: 'Playfair Display', serif; margin: 0; }
-        img { max-width: 100%; display: block; height: auto; }
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
 
         /* --- Header Styles --- */
-        .head { background-color: #422406; height: clamp(80px, 9vw, 105px); width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(15px, 4vw, 35px); box-sizing: border-box; position: relative; z-index: 1000; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        .brand { display: flex; align-items: center; gap: 0; color: #ffffff; font-size: clamp(22px, 4.5vw, 38px); font-weight: bold; white-space: nowrap; }
-        .brand img { height: clamp(55px, 7vw, 85px); width: auto; display: block; margin-right: -45px; margin-top: -8px; transition: height 0.3s ease, margin 0.3s ease; }
-        .nav-links { display: flex; align-items: center; gap: 40px; }
-        .nav-links a { color: #e8f400; text-decoration: none; font-size: 20px; text-transform: uppercase; transition: color 0.2s ease-in-out; outline: none; }
-        .nav-links a.active { color: #8EC5FF; text-decoration: underline; text-underline-offset: 6px; }
-        @media screen and (min-width: 769px) { .nav-links a:hover { color: #8EC5FF; text-decoration: underline; text-underline-offset: 6px; } }
-        .menu-toggle { display: none; flex-direction: column; justify-content: space-between; width: 32px; height: 24px; cursor: pointer; background: transparent !important; border: none !important; padding: 0; outline: none !important; box-shadow: none !important; -webkit-appearance: none; appearance: none; z-index: 1001; }
-        .menu-toggle span { display: block; height: 3px; width: 100%; background-color: #ffffff; border-radius: 2px; transition: transform 0.4s ease, opacity 0.3s ease; }
+        .head {
+            background-color: #422406;
+            height: clamp(80px, 9vw, 105px);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 clamp(15px, 4vw, 35px);
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            color: #ffffff;
+            font-size: clamp(22px, 4.5vw, 38px);
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .brand img {
+            height: clamp(55px, 7vw, 85px);
+            width: auto;
+            display: block;
+            margin-right: -45px;
+            margin-top: -8px;
+            transition: height 0.3s ease, margin 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: #e8f400;
+            text-decoration: none;
+            font-size: 20px;
+            text-transform: uppercase;
+            transition: color 0.2s ease-in-out;
+            outline: none;
+        }
+
+        .nav-links a.active {
+            color: #8EC5FF;
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+
+        @media screen and (min-width: 769px) {
+            .nav-links a:hover {
+                color: #8EC5FF;
+                text-decoration: underline;
+                text-underline-offset: 6px;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 32px;
+            height: 24px;
+            cursor: pointer;
+            background: transparent !important;
+            border: none !important;
+            padding: 0;
+            outline: none !important;
+            box-shadow: none !important;
+            -webkit-appearance: none;
+            appearance: none;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 2px;
+            transition: transform 0.4s ease, opacity 0.3s ease;
+        }
 
         /* --- Page Content Styles --- */
-        .hero-banner { position: relative; width: 100%; height: 55vh; min-height: 350px; background-color: var(--dark-card); background-image: url('https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/Coffee_cup_on_wooden_table_202607031205-1.jpeg'); background-size: cover; background-position: center 100%; background-repeat: no-repeat; margin-bottom: clamp(20px, 4vw, 40px); display: flex; align-items: flex-end; padding-bottom: clamp(20px, 5vw, 40px); box-sizing: border-box; }
-        .hero-banner::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4); z-index: 1; }
-        .hero-label { position: relative; z-index: 2; color: #FFFFFF; font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding-left: clamp(20px, 5%, 100px); }
-        .about-container { max-width: 100%; width: 100%; margin: 0 auto clamp(40px, 8vw, 80px); padding: 0 4%; box-sizing: border-box; }
-        .story-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(30px, 6vw, 60px); align-items: center; margin-bottom: clamp(50px, 10vw, 100px); }
-        .story-content h2 { font-size: clamp(2rem, 4vw, 2.5rem); color: var(--text-color); margin-bottom: 20px; line-height: 1.2; }
-        .story-content h2 span { color: var(--accent-color); }
-        .story-content p { font-size: clamp(1rem, 2vw, 1.1rem); color: var(--text-light); margin-bottom: 20px; }
-        .story-image-wrapper { position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 15px 40px rgba(0,0,0,0.12); cursor: pointer; }
-        .story-image-wrapper img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
-        .story-image-wrapper:hover img { transform: scale(1.05); }
-        .process-section { background-color: var(--dark-card); color: #fdfbf5; padding: clamp(40px, 6vw, 80px) 5%; border-radius: 12px; margin-bottom: clamp(50px, 10vw, 100px); text-align: center; box-sizing: border-box; }
-        .process-section h2 { font-size: clamp(1.8rem, 4vw, 2.2rem); margin-bottom: 20px; color: var(--accent-color); }
-        .process-section > p { max-width: 800px; margin: 0 auto 40px; font-size: clamp(1rem, 2vw, 1.1rem); color: #fdfbf5; }
-        .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: clamp(20px, 5vw, 40px); }
-        .step { padding: clamp(10px, 3vw, 20px); }
-        .step-number { font-size: clamp(2.8rem, 5vw, 3.5rem); font-weight: bold; color: rgba(196, 154, 69, 0.85); display: block; margin-bottom: -10px; }
-        .step h3 { color: #ffffff; font-size: clamp(1.3rem, 3vw, 1.5rem); margin-bottom: 10px; }
-        .step p { color: #eaddd1; font-size: 1rem; }
-        .values-section { text-align: center; margin-bottom: clamp(50px, 10vw, 100px); }
-        .values-section h2 { font-size: clamp(1.8rem, 4vw, 2.2rem); margin-bottom: 50px; position: relative; display: inline-block; }
-        .values-section h2::after { content: ''; width: 50%; height: 3px; background-color: var(--accent-color); position: absolute; bottom: -15px; left: 25%; }
-        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
-        .value-card { background-color: var(--card-bg); padding: clamp(30px, 5vw, 50px) clamp(20px, 3vw, 30px); border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); box-sizing: border-box; transition: transform 0.3s ease; }
-        .value-card:hover { transform: translateY(-5px); }
-        .value-card::after, .story-image-wrapper::after, .equipment-image::after, .signature-img-wrapper::after { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%); transform: skewX(-25deg); pointer-events: none; z-index: 10; }
-        .value-card:hover::after, .story-image-wrapper:hover::after, .equipment-image:hover::after, .signature-card:hover .signature-img-wrapper::after { animation: shineLeftToRight 0.8s ease-in-out forwards; }
-        @keyframes shineLeftToRight { 0% { left: -100%; } 100% { left: 200%; } }
-        .value-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
-        .value-card h3 { font-size: 1.3rem; color: var(--text-color); margin-bottom: 15px; }
-        .value-card p { color: var(--text-light); font-size: 1rem; }
-        .equipment-section { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(30px, 6vw, 50px); align-items: center; margin-bottom: clamp(50px, 10vw, 100px); background-color: var(--card-bg); padding: clamp(30px, 6vw, 60px) 5%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid rgba(196, 154, 69, 0.15); box-sizing: border-box; }
-        .equipment-content h2 { font-size: clamp(2rem, 4vw, 2.5rem); color: var(--text-color); margin-bottom: 20px; line-height: 1.2; }
-        .equipment-content h2 span { color: var(--accent-color); }
-        .equipment-content p { font-size: clamp(1rem, 2vw, 1.1rem); color: var(--text-light); margin-bottom: 20px; }
-        .equipment-image { order: 0; position: relative; overflow: hidden; border-radius: 12px; border: 2px solid rgba(196, 154, 69, 0.3); cursor: pointer; }
-        .equipment-image img { width: 100%; aspect-ratio: 4/5; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
-        .equipment-image:hover img { transform: scale(1.05); }
-        .signature-section { margin-bottom: clamp(40px, 10vw, 100px); }
-        .signature-section > h2 { text-align: center; font-size: clamp(2rem, 4vw, 2.5rem); color: var(--text-color); margin-bottom: 40px; }
-        .signature-section > h2 span { color: var(--accent-color); }
-        .signature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .signature-card { background-color: var(--dark-card); border-radius: 12px; overflow: hidden; color: #fdfbf5; box-shadow: 0 15px 40px rgba(0,0,0,0.15); transition: transform 0.4s ease, border-color 0.4s ease; border: 1px solid rgba(196, 154, 69, 0.1); display: flex; flex-direction: column; cursor: pointer; }
-        .signature-card:hover { transform: translateY(-10px); border-color: var(--accent-color); }
-        .signature-img-wrapper { height: clamp(200px, 30vw, 300px); position: relative; overflow: hidden; border-bottom: 3px solid var(--accent-color); }
-        .signature-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-        .signature-card:hover .signature-img-wrapper img { transform: scale(1.08); }
-        .signature-content { padding: 25px; flex: 1; }
-        .signature-content h3 { color: var(--accent-color); font-size: 1.4rem; margin-bottom: 12px; letter-spacing: 0.5px; }
-        .signature-content p { color: #d6c4b3; font-size: 1rem; line-height: 1.6; margin-bottom: 0; }
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 55vh;
+            min-height: 350px;
+            background-color: var(--dark-card);
+            background-image: url('images/Coffee_cup_on_wooden_table_202607031205.jpeg');
+            background-size: cover;
+            background-position: center 100%;
+            background-repeat: no-repeat;
+            margin-bottom: clamp(20px, 4vw, 40px);
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: clamp(20px, 5vw, 40px);
+            box-sizing: border-box;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-label {
+            position: relative;
+            z-index: 2;
+            color: #FFFFFF;
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding-left: clamp(20px, 5%, 100px);
+        }
+
+        .about-container {
+            max-width: 100%;
+            width: 100%;
+            margin: 0 auto clamp(40px, 8vw, 80px);
+            padding: 0 4%;
+            box-sizing: border-box;
+        }
+
+        .story-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(30px, 6vw, 60px);
+            align-items: center;
+            margin-bottom: clamp(50px, 10vw, 100px);
+        }
+
+        .story-content h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            color: var(--text-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .story-content h2 span {
+            color: var(--accent-color);
+        }
+
+        .story-content p {
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .story-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+        }
+
+        .story-image-wrapper img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .story-image-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .process-section {
+            background-color: var(--dark-card);
+            color: #fdfbf5;
+            padding: clamp(40px, 6vw, 80px) 5%;
+            border-radius: 12px;
+            margin-bottom: clamp(50px, 10vw, 100px);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .process-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .process-section>p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            color: #fdfbf5;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: clamp(20px, 5vw, 40px);
+        }
+
+        .step {
+            padding: clamp(10px, 3vw, 20px);
+        }
+
+        .step-number {
+            font-size: clamp(2.8rem, 5vw, 3.5rem);
+            font-weight: bold;
+            color: rgba(196, 154, 69, 0.85);
+            display: block;
+            margin-bottom: -10px;
+        }
+
+        .step h3 {
+            color: #ffffff;
+            font-size: clamp(1.3rem, 3vw, 1.5rem);
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #eaddd1;
+            font-size: 1rem;
+        }
+
+        .values-section {
+            text-align: center;
+            margin-bottom: clamp(50px, 10vw, 100px);
+        }
+
+        .values-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .values-section h2::after {
+            content: '';
+            width: 50%;
+            height: 3px;
+            background-color: var(--accent-color);
+            position: absolute;
+            bottom: -15px;
+            left: 25%;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background-color: var(--card-bg);
+            padding: clamp(30px, 5vw, 50px) clamp(20px, 3vw, 30px);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card::after,
+        .story-image-wrapper::after,
+        .equipment-image::after,
+        .signature-img-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .value-card:hover::after,
+        .story-image-wrapper:hover::after,
+        .equipment-image:hover::after,
+        .signature-card:hover .signature-img-wrapper::after {
+            animation: shineLeftToRight 0.8s ease-in-out forwards;
+        }
+
+        @keyframes shineLeftToRight {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 200%;
+            }
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .value-card h3 {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .equipment-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(30px, 6vw, 50px);
+            align-items: center;
+            margin-bottom: clamp(50px, 10vw, 100px);
+            background-color: var(--card-bg);
+            padding: clamp(30px, 6vw, 60px) 5%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(196, 154, 69, 0.15);
+            box-sizing: border-box;
+        }
+
+        .equipment-content h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            color: var(--text-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .equipment-content h2 span {
+            color: var(--accent-color);
+        }
+
+        .equipment-content p {
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .equipment-image {
+            order: 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 2px solid rgba(196, 154, 69, 0.3);
+            cursor: pointer;
+        }
+
+        .equipment-image img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .equipment-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .signature-section {
+            margin-bottom: clamp(40px, 10vw, 100px);
+        }
+
+        .signature-section>h2 {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            color: var(--text-color);
+            margin-bottom: 40px;
+        }
+
+        .signature-section>h2 span {
+            color: var(--accent-color);
+        }
+
+        .signature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .signature-card {
+            background-color: var(--dark-card);
+            border-radius: 12px;
+            overflow: hidden;
+            color: #fdfbf5;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease, border-color 0.4s ease;
+            border: 1px solid rgba(196, 154, 69, 0.1);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .signature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+        }
+
+        .signature-img-wrapper {
+            height: clamp(200px, 30vw, 300px);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .signature-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .signature-card:hover .signature-img-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .signature-content {
+            padding: 25px;
+            flex: 1;
+        }
+
+        .signature-content h3 {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .signature-content p {
+            color: #d6c4b3;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
 
         /* =========================================================
            FOOTER STYLES
@@ -185,7 +589,6 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            border-radius: 12px;
             display: block;
         }
 
@@ -366,46 +769,146 @@
                 display: block !important;
             }
         }
+
         /* --- Responsive Queries --- */
         @media screen and (max-width: 991px) {
-            .equipment-image { order: 2; }
-            .ms-footer-content { flex-direction: column; text-align: left; align-items: flex-start; }
-            .ms-footer-right { margin-top: 40px; justify-content: center; width: 100%; }
-            .ms-footer-right img { max-height: 300px; }
-            .nav-links { gap: 20px; }
+            .equipment-image {
+                order: 2;
+            }
+
+            .ms-footer-content {
+                flex-direction: column;
+                text-align: left;
+                align-items: flex-start;
+            }
+
+            .ms-footer-right {
+                margin-top: 40px;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .ms-footer-right img {
+                max-height: 300px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
         }
 
         @media screen and (max-width: 768px) {
-            .menu-toggle { display: flex; }
-            .menu-toggle.active span:nth-child(1) { transform: translateY(10.5px) rotate(45deg); }
-            .menu-toggle.active span:nth-child(2) { opacity: 0; }
-            .menu-toggle.active span:nth-child(3) { transform: translateY(-10.5px) rotate(-45deg); }
-            .nav-links { display: flex; position: absolute; top: 100%; left: 0; width: 100%; background-color: #422406; flex-direction: column; gap: 0; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); max-height: 0; opacity: 0; overflow: hidden; visibility: hidden; transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, visibility 0.4s; }
-            .nav-links.nav-open { max-height: 400px; opacity: 1; visibility: visible; }
-            .nav-links a { padding: 18px 20px; width: 100%; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 18px; }
-            
-            .ms-site-footer { padding: 50px 5%; }
-            .footer-nav-links, .footer-social-links { gap: 20px; flex-direction: column; }
-            .footer-brand { font-size: 26px; }
-            .footer-brand svg { width: 35px; height: 35px; }
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(10.5px) rotate(45deg);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-10.5px) rotate(-45deg);
+            }
+
+            .nav-links {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #422406;
+                flex-direction: column;
+                gap: 0;
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                visibility: hidden;
+                transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, visibility 0.4s;
+            }
+
+            .nav-links.nav-open {
+                max-height: 400px;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links a {
+                padding: 18px 20px;
+                width: 100%;
+                text-align: center;
+                border-top: 1px solid rgba(255, 255, 255, 0.08);
+                font-size: 18px;
+            }
+
+            .ms-site-footer {
+                padding: 50px 5%;
+            }
+
+            .footer-nav-links,
+            .footer-social-links {
+                gap: 20px;
+                flex-direction: column;
+            }
+
+            .footer-brand {
+                font-size: 26px;
+            }
+
+            .footer-brand svg {
+                width: 35px;
+                height: 35px;
+            }
         }
 
         @media screen and (max-width: 576px) {
-            .hero-banner { height: 40vh; min-height: 250px; background-position: 85% 100%; }
-            .hero-label { padding-left: 20px; }
-            .about-container { padding: 0 6%; }
-            .story-section, .equipment-section, .process-steps, .values-grid, .signature-grid { grid-template-columns: 1fr; }
-            .story-image-wrapper img, .equipment-image img { aspect-ratio: 16/10; }
-            .head .brand img { margin-right: -35px; }
-            .head { padding: 0 15px; }
+            .hero-banner {
+                height: 40vh;
+                min-height: 250px;
+                background-position: 85% 100%;
+            }
+
+            .hero-label {
+                padding-left: 20px;
+            }
+
+            .about-container {
+                padding: 0 6%;
+            }
+
+            .story-section,
+            .equipment-section,
+            .process-steps,
+            .values-grid,
+            .signature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story-image-wrapper img,
+            .equipment-image img {
+                aspect-ratio: 16/10;
+            }
+
+            .head .brand img {
+                margin-right: -35px;
+            }
+
+            .head {
+                padding: 0 15px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header class="head">
         <div class="brand">
-            <img src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/logo-removebg-preview.png" alt="Coffee World Logo">
+            <img src="images/logo.png?v=2" alt="Coffee World Logo">
             My Coffee World
         </div>
         <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation">
@@ -425,36 +928,44 @@
     </section>
 
     <main class="about-container">
-        
+
         <section class="story-section">
             <div class="story-content">
                 <h2>Brewing <span>Masterpieces</span> Since Day One</h2>
-                <p>Located in the heart of Nagapattinam, The Coffee World was born from a singular vision: to elevate the daily coffee ritual into an extraordinary experience. We don't just serve beverages; we curate a premium lifestyle where community and world-class quality intersect.</p>
-                <p>From the moment you step through our doors, you are immersed in a meticulously designed atmosphere. Our baristas are true artisans, transforming ethically sourced, single-origin beans into a cup that speaks for itself.</p>
+                <p>Located in the heart of Nagapattinam, The Coffee World was born from a singular vision: to elevate
+                    the daily coffee ritual into an extraordinary experience. We don't just serve beverages; we curate a
+                    premium lifestyle where community and world-class quality intersect.</p>
+                <p>From the moment you step through our doors, you are immersed in a meticulously designed atmosphere.
+                    Our baristas are true artisans, transforming ethically sourced, single-origin beans into a cup that
+                    speaks for itself.</p>
             </div>
             <div class="story-image-wrapper">
-                <img src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/Create_image_related_coffee_202607011611.jpeg" alt="Artisan barista pouring espresso">
+                <img src="images/Create_image_related_coffee_202607011611.jpeg" alt="Artisan barista pouring espresso">
             </div>
         </section>
 
         <section class="process-section">
             <h2>The Art of the Roast</h2>
-            <p>Great coffee is no accident. It is the result of strict quality control, precise engineering, and a deep respect for the bean. Here is how we ensure perfection in every pour.</p>
+            <p>Great coffee is no accident. It is the result of strict quality control, precise engineering, and a deep
+                respect for the bean. Here is how we ensure perfection in every pour.</p>
             <div class="process-steps">
                 <div class="step">
                     <span class="step-number">01</span>
                     <h3>Sourcing</h3>
-                    <p>We partner directly with high-altitude, sustainable farms to select only top-tier Arabica cherries.</p>
+                    <p>We partner directly with high-altitude, sustainable farms to select only top-tier Arabica
+                        cherries.</p>
                 </div>
                 <div class="step">
                     <span class="step-number">02</span>
                     <h3>Profiling</h3>
-                    <p>Our master roasters develop custom thermal profiles to unlock the unique flavor notes of every batch.</p>
+                    <p>Our master roasters develop custom thermal profiles to unlock the unique flavor notes of every
+                        batch.</p>
                 </div>
                 <div class="step">
                     <span class="step-number">03</span>
                     <h3>Extraction</h3>
-                    <p>Using state-of-the-art espresso machinery, we calibrate water temperature and pressure for a flawless yield.</p>
+                    <p>Using state-of-the-art espresso machinery, we calibrate water temperature and pressure for a
+                        flawless yield.</p>
                 </div>
             </div>
         </section>
@@ -465,31 +976,42 @@
                 <div class="value-card">
                     <span class="value-icon">☕</span>
                     <h3>Uncompromising Quality</h3>
-                    <p>We reject the ordinary. From our high-end espresso to our organic oat milk, we serve only the absolute best ingredients available.</p>
+                    <p>We reject the ordinary. From our high-end espresso to our organic oat milk, we serve only the
+                        absolute best ingredients available.</p>
                 </div>
                 <div class="value-card">
                     <span class="value-icon">🌱</span>
                     <h3>Sustainable Luxury</h3>
-                    <p>We partner with ethical farms and utilize eco-conscious packaging, proving that premium experiences can also protect our environment.</p>
+                    <p>We partner with ethical farms and utilize eco-conscious packaging, proving that premium
+                        experiences can also protect our environment.</p>
                 </div>
                 <div class="value-card">
                     <span class="value-icon">🤝</span>
                     <h3>Modern Community</h3>
-                    <p>Our shop is designed to be your aesthetic escape—a comfortable, sophisticated environment perfect for focus or social connection.</p>
+                    <p>Our shop is designed to be your aesthetic escape—a comfortable, sophisticated environment perfect
+                        for focus or social connection.</p>
                 </div>
             </div>
         </section>
 
         <section class="equipment-section">
             <div class="equipment-image">
-                <img src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/Create_high_end_espresso_machine_202607011619.jpeg" alt="High-end espresso machine">
+                <img src="images/Create_high_end_espresso_machine_202607011619.jpeg" alt="High-end espresso machine">
             </div>
             <div class="equipment-content">
                 <h2>Engineered for <span>Perfection</span></h2>
-                <p>We believe that true quality requires world-class infrastructure. Our baristas operate industry-leading, precision-calibrated espresso machinery that ensures absolute consistency during every extraction.</p>
-                <p>By leveraging state-of-the-art thermal stability and custom pressure profiling, we treat coffee preparation with the exactness of a science and the grace of an art form, guaranteeing a flawlessly structured cup every single time.</p>
-                <p>Powered by state-of-the-art espresso technology, our brewing systems deliver unparalleled precision, consistency, and control. Every extraction is carefully engineered to showcase the true essence of the coffee, cup after cup.</p>
-                <p>Every shot is brewed with carefully calibrated pressure and extraction timing to ensure maximum flavor clarity and balance. Our precision brewing technology minimizes variations and delivers exceptional consistency throughout the day.</p>
+                <p>We believe that true quality requires world-class infrastructure. Our baristas operate
+                    industry-leading, precision-calibrated espresso machinery that ensures absolute consistency during
+                    every extraction.</p>
+                <p>By leveraging state-of-the-art thermal stability and custom pressure profiling, we treat coffee
+                    preparation with the exactness of a science and the grace of an art form, guaranteeing a flawlessly
+                    structured cup every single time.</p>
+                <p>Powered by state-of-the-art espresso technology, our brewing systems deliver unparalleled precision,
+                    consistency, and control. Every extraction is carefully engineered to showcase the true essence of
+                    the coffee, cup after cup.</p>
+                <p>Every shot is brewed with carefully calibrated pressure and extraction timing to ensure maximum
+                    flavor clarity and balance. Our precision brewing technology minimizes variations and delivers
+                    exceptional consistency throughout the day.</p>
                 <p>The result is a rich, aromatic espresso experience in every cup served.</p>
             </div>
         </section>
@@ -499,31 +1021,34 @@
             <div class="signature-grid">
                 <div class="signature-card">
                     <div class="signature-img-wrapper">
-                        <img src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/saffron1-scaled.jpg" alt="Golden Saffron Latte">
+                        <img src="images/saffron1.jpg" alt="Golden Saffron Latte">
                     </div>
                     <div class="signature-content">
                         <h3>Golden Saffron Latte</h3>
-                        <p>A cinematic blend of our premium espresso, steamed organic oat milk, and hand-harvested saffron threads, finished with a subtle touch of edible gold leaf.</p>
-                    </div>
-                </div>
-                
-                <div class="signature-card">
-                    <div class="signature-img-wrapper">
-                        <img src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/velvet-1.webp" alt="The Velvet Pour-Over">
-                    </div>
-                    <div class="signature-content">
-                        <h3>The Velvet Pour-Over</h3>
-                        <p>A meticulously crafted single-origin Ethiopian roast, yielding complex notes of dark cherry and dark chocolate with a silky smooth, flawless finish.</p>
+                        <p>A cinematic blend of our premium espresso, steamed organic oat milk, and hand-harvested
+                            saffron threads, finished with a subtle touch of edible gold leaf.</p>
                     </div>
                 </div>
 
                 <div class="signature-card">
                     <div class="signature-img-wrapper">
-                        <img src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/vennila1-1.jpg" alt="Smoked Vanilla Cold Brew">
+                        <img src="images/velvet.webp" alt="The Velvet Pour-Over">
+                    </div>
+                    <div class="signature-content">
+                        <h3>The Velvet Pour-Over</h3>
+                        <p>A meticulously crafted single-origin Ethiopian roast, yielding complex notes of dark cherry
+                            and dark chocolate with a silky smooth, flawless finish.</p>
+                    </div>
+                </div>
+
+                <div class="signature-card">
+                    <div class="signature-img-wrapper">
+                        <img src="images/vennila1.jpg" alt="Smoked Vanilla Cold Brew">
                     </div>
                     <div class="signature-content">
                         <h3>Smoked Vanilla Cold Brew</h3>
-                        <p>Steeped for 24 hours and infused with Madagascar vanilla bean, then gently smoked with hickory wood for an unforgettable, multi-layered profile.</p>
+                        <p>Steeped for 24 hours and infused with Madagascar vanilla bean, then gently smoked with
+                            hickory wood for an unforgettable, multi-layered profile.</p>
                     </div>
                 </div>
             </div>
@@ -536,12 +1061,12 @@
 
             <div class="ms-footer-brand">
                 <div class="brand">
-                    <img src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/logo-removebg-preview.png"
-                        alt="Coffee World Logo">
+                    <img src="images/logo.png?v=2" alt="Coffee World Logo">
                     My Coffee World
                 </div>
                 <h2 class="footer-heading">
-                    <span class="highlight">Elevate your coffee moments with a perfect blend of richness, aroma, and elegance.</span>
+                    <span class="highlight">Elevate your coffee moments with a perfect blend of richness, aroma, and
+                        elegance.</span>
                 </h2>
             </div>
 
@@ -600,7 +1125,7 @@
             </div>
 
             <div class="ms-footer-center-image">
-                <img src="https://mycoffeeworld.dpdns.org/wp-content/uploads/2026/07/c11.jpg" alt="My Coffee Cup">
+                <img src="C:\Users\Sivanesan S\OneDrive\Desktop\coffee project\images\c11.jpg" alt="My Coffee Cup">
             </div>
 
         </div>
@@ -622,4 +1147,5 @@
         });
     </script>
 </body>
+
 </html>
